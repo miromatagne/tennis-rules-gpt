@@ -7,7 +7,7 @@ from text_splitter import RecursiveCharacterTextSplitter
 
 def generate_embeddings():
     pdf_contents = json.load(open("outputs/pdf_contents.json"))
-    splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=150)
+    splitter = RecursiveCharacterTextSplitter(chunk_size=2000, chunk_overlap=200)
     model = SentenceTransformer('all-MiniLM-L6-v2')
     chunks = {}
     embeddings = []

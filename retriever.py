@@ -1,3 +1,4 @@
+import numpy as np
 from sentence_transformers import SentenceTransformer, util, CrossEncoder
 import json
 
@@ -29,3 +30,8 @@ def get_relevant_chunks(chunks, embeddings, query, top_k, top_k_multiplier):
     # print(final_scores.keys())
     return final_scores
 
+
+if __name__ == "__main__":
+    chunks = json.load(open("outputs/chunks.json"))
+    embeddings = np.load("outputs/embeddings.npy")
+    scores = get_relevant_chunks(chunks, embeddings, "What is the prize money for a ATP 250 winner?", 5, 2)
