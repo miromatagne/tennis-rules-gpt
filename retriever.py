@@ -34,4 +34,5 @@ def get_relevant_chunks(chunks, embeddings, query, top_k, top_k_multiplier):
 if __name__ == "__main__":
     chunks = json.load(open("outputs/chunks.json"))
     embeddings = np.load("outputs/embeddings.npy")
-    scores = get_relevant_chunks(chunks, embeddings, "What is the prize money for a ATP 250 winner?", 5, 2)
+    scores = get_relevant_chunks(chunks, embeddings, "How many points do you get from an ATP 500 win?", 5, 2)
+    print(scores)
